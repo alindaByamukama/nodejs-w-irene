@@ -9,7 +9,8 @@ const app = express();
 
 // configurations
 
-// middleware
+// MIDDLEWARE
+
 // a session is often used in applications suchas login/signup
 // app.use(
 //   session({
@@ -21,7 +22,7 @@ const app = express();
 // );
 // process incoming data such as body payload - data received from client
 app.use(express.urlencoded({ extended: false }));
-// a middleware function
+
 // Simple request time logger
 app.use((req, res, next) => {
   console.log("A new request received at " + Date.now());
