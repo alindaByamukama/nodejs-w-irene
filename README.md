@@ -5,3 +5,5 @@
   - [javascript-express-hello-world](https://wsvincent.com/javascript-express-hello-world/)
 - Further reading
   - [what-is-node-js](https://kinsta.com/knowledgebase/what-is-node-js/#:~:text=a%20word%3A%20no.-,Node)
+  - [Express explained w/ examples](https://www.freecodecamp.org/news/express-explained-with-examples-installation-routing-middleware-and-more/)
+  - [REST api introduction](https://www.geeksforgeeks.org/rest-api-introduction/)
