@@ -20,8 +20,15 @@
     - can be used on specific routes
 
 ### Day Five
-- Using files in our application
-  - Assignment create a simple registration and landing page 
+- [x] Assignment create a simple registration and landing page 
+- [Path params and Query strings](https://faun.pub/a-quick-look-into-path-parameters-and-query-strings-6e839110f9b)
+- An example of path params & query strings at work
+  - http://localhost:3000/users?class=node&cohort=12 
+- Getting HTML files 
+  - getting route for a file in the same directory
+  - [__dirname] specifies the folder
+  - on the form element we need the attributes action="/PATH" and method="post"
+  - 
 
 #### Further study
   - [what-is-node-js](https://kinsta.com/knowledgebase/what-is-node-js/#:~:text=a%20word%3A%20no.-,Node)
