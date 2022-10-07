@@ -24,14 +24,14 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 
 // Simple request time logger
-app.use((req, res, next) => {
-  console.log("A new request received at " + Date.now());
+// app.use((req, res, next) => {
+//   console.log("A new request received at " + Date.now());
 
-  // This function call tells that more processing is
-  // required for the current request and is in the next middleware
-  // function/route handler.
-  next();
-});
+//   // This function call tells that more processing is
+//   // required for the current request and is in the next middleware
+//   // function/route handler.
+//   next();
+// });
 
 // routes
 // structure of a route --> app.METHOD(PATH, HANDLER)
@@ -40,34 +40,47 @@ app.get("/", (req, res) => {
   res.send("Homepage! Hello World.");
 });
 
-app.post("/register", (req, res) => {
-  res.send("You have registered a user");
-}); 
-  
-app.delete("/about", (req, res) => {
-  res.send("You have deleted something");
-}); 
+// using query params
+// app.get("/users/:name", (req, res) => {
+//   res.send("Hello " + req.params.name);
+// });
 
-app.put("/about", (req, res) => {
-  res.send("I have been changed!");
+// postman --> localhost:3000/users?class=node&cohort=12
+// app.get("/queryparams", (req, res) => {
+//   res.send(
+//     "My query params are: " + req.query.class + " and " + req.query.cohort
+//   );
+// });
+
+// getting route for a file in a directory
+app.get("/landing", (req, res) => {
+  res.sendFile(__dirname + "/pages/landing/index.html");
 });
 
 app.get("/about", (req, res) => {
-  res.send("About page! Learn more about us.");
+  res.sendFile(__dirname + "/pages/about/about.html");
+});
+
+app.get("/signup", (req, res) => {
+  res.sendFile(__dirname + "/pages/signup/forms.html");
+});
+// for every post route we must first GET 
+app.post("/signup", (req, res) => {
+  console.log(req.body);
+  res.redirect("/about");
 });
 
 //Simple request time logger for a specific route
-// app.use('/about', (req, res, next) => {
-//   console.log('A new request received at ' + Date.now());
-//   next();
-// });
-
-// route params are named URL segments used to capture
-// values specified at their position in the URL
-// req.params object is used to access all params passed in the url
-app.get("/books/:bookId", (req, res) => {
-  res.send(req.params);
+app.use('/about', (req, res, next) => {
+  console.log('A new request received at ' + Date.now());
+  next();
 });
+
+// route params are named URL segments used to capture values specified at their position in the URL
+// req.params object is used to access all params passed in the url
+// app.get("/books/:bookId", (req, res) => {
+//   res.send(req.params);
+// });
 
 // For invalid routes
 app.get("*", (req, res) => {

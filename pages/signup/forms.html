@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form action="/signup" class="form" id="signup" name="registration" method="post">
+            <h1>Sign Up</h1>
+            <div class="form-field">
+                <label for="username">Username:</label>
+                <input type="text" name="username" autocomplete="off" id="username">
+                <small></small>
+            </div>
+            <div class="form-field">
+                <label for="first-name">First Name:</label>
+                <input type="text" name="first-name" autocomplete="off" id="first-name">
+                <small></small>
+            </div>
+            <div class="form-field">
+                <label for="phone-number">Phone Number:</label>
+                <input type="text" name="phone-number" autocomplete="off" id="phone-number">
+                <small></small>
+            </div>
+            <div class="form-field">
+                <label for="email">Email:</label>
+                <input type="email" name="email" autocomplete="off" id="email">
+                <small></small>
+            </div>
+            <div class="form-field">
+                <label for="password">Password:</label>
+                <input type="password" name="password" autocomplete="off" id="password" required>
+                <small></small>
+            </div>
+            <div class="form-field">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" name="confirm-password" autocomplete="off" id="confirm-password" required>
+                <small></small>
+            </div>
+            <div class="form-field">
+                <input type="submit" class="btn" id="submit" value="Sign Up" onclick="checkUserName(), checkFirstName(), checkTelephone(), checkEmail(), checkPassword(), checkConfirmPassword()">
+                <small></small>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="./forms.js"></script>
+</html>
