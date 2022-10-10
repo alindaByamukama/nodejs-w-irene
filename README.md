@@ -28,6 +28,20 @@
   - getting route for a file in the same directory
   - [__dirname] specifies the folder
   - on the form element we need the attributes action="/PATH" and method="post"
+
+### Day Six
+- write a simple PUG page
+- URI (uniform resource identifier - name, location of both)
+  - URL - uniform resource locator 
+  - URN - uniform resource name
+- Pug - formaerly known as Jade
+  - indentation mattersalot in Pug -> take care and be mindful
+  - a node package that can be installed -> npm install pug
+  - setup and usage of Pug
+  - create files in Pug -> layout and registration
+  - Pug converters --> 
+    - [HTML to Pug](https://html-to-pug.com/)
+    - [Pug HTML](https://pughtml.com/)
   - 
 
 #### Further study
