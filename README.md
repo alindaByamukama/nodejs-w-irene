@@ -12,7 +12,7 @@
 - CRUD create read update delete
 ### Day Four
 - Testing our endpoints with Postman
-  - (Postman)[https://www.postman.com/downloads/]
+  - [Postman](https://www.postman.com/downloads/)
 - How to use middleware
   - body parser --> process incoming data such as body payload - data received from client
   - session --> a session is often used in applications such as login/signup
