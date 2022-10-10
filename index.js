@@ -1,13 +1,19 @@
 // dependencies
 // import the dependancy express
 const express = require("express");
+const pug = require("pug");
+const path = require("path");
 
-// import express into the server file - entry point of our project
-// this means we are using express as our server
-// instantiations
+// imports express into the server file - entry point of our project -> this means we are using express as our server
+
+// INSTANTIATIONS
 const app = express();
+// app.engine('pug', require('pug')._express)
+app.set('view engine', 'pug')
+app.set('views', path.join(__dirname, 'views'))
 
-// configurations
+
+// CONFIGURATIONS
 
 // MIDDLEWARE
 
@@ -66,6 +72,16 @@ app.get("/signup", (req, res) => {
 });
 // for every post route we must first GET 
 app.post("/signup", (req, res) => {
+  console.log(req.body);
+  res.redirect("/about");
+});
+
+// Rendering Pug files
+app.get("/register", (req, res) => {
+  res.render("registration");
+});
+// for every post route we must first GET 
+app.post("/register", (req, res) => {
   console.log(req.body);
   res.redirect("/about");
 });
