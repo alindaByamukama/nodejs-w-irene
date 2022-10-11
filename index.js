@@ -12,10 +12,13 @@ const app = express();
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, 'views'))
 
-
 // CONFIGURATIONS
 
 // MIDDLEWARE
+// handles static files like css, js, images, videos
+app.use(express.static(path.join(__dirname, 'public')))
+// handles images you upload into your project
+app.use('/public/images', express.static(__dirname + '/public/uploads')) 
 
 // a session is often used in applications suchas login/signup
 // app.use(

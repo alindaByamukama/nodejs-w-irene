@@ -42,7 +42,28 @@
   - Pug converters --> 
     - [HTML to Pug](https://html-to-pug.com/)
     - [Pug HTML](https://pughtml.com/)
-  - 
+
+### Day Seven
+- Adding images, js and css to our pug files
+- app.use(express.static(path.join(__dirname, 'public')))
+  - this loads any images, css, js and other files you may want in your project
+  - it sets the default directory for all these files in the public directory
+  - no need o reference the directory when linking css or images for examples
+- app.use('/public/images', express.static(__dirname + '/public/images')) 
+  - handles images you upload
+- installation of the following dependecies into our project
+  - npm install connect-ensure-login 
+  - npm install express-session 
+  - npm install multer 
+  - npm install mongoose
+  - npm install passport 
+  - npm install passport-local 
+  - npm install passport-local-mongoose 
+  - npm install moment 
+- [ ] Assignment: Read about the MVC (model views controller) structure
+- [ ] Assignment: Add more Pug files to your project
+  - [ ] Push your files to GitHub
+  - [ ] Share the link to the repo
 
 #### Further study
   - [what-is-node-js](https://kinsta.com/knowledgebase/what-is-node-js/#:~:text=a%20word%3A%20no.-,Node)
