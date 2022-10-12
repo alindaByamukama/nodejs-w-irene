@@ -42,6 +42,7 @@
   - Pug converters --> 
     - [HTML to Pug](https://html-to-pug.com/)
     - [Pug HTML](https://pughtml.com/)
+    - [Code beautify -> html-to-pug-converter](https://codebeautify.org/html-to-pug-converter)
 
 ### Day Seven
 - Adding images, js and css to our pug files
@@ -61,6 +62,7 @@
   - npm install passport-local-mongoose 
   - npm install moment 
 - [ ] Assignment: Read about the MVC (model views controller) structure
+  - [MVC Architecture - GeeksforGeeks](https://www.geeksforgeeks.org/model-view-controllermvc-architecture-for-node-applications/)
 - [ ] Assignment: Add more Pug files to your project
   - [ ] Push your files to GitHub
   - [ ] Share the link to the repo
