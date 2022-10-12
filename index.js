@@ -9,18 +9,20 @@ const path = require("path");
 // INSTANTIATIONS
 const app = express();
 // app.engine('pug', require('pug')._express)
-app.set('view engine', 'pug')
-app.set('views', path.join(__dirname, 'views'))
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "views"));
 
 // CONFIGURATIONS
 
 // MIDDLEWARE
 // handles static files like css, js, images, videos
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, "public")));
 // handles images you upload into your project
-app.use('/public/images', express.static(__dirname + '/public/uploads')) 
+app.use("/public/images", express.static(__dirname + "/public/uploads"));
+// process incoming data such as body payload - data received from client
+app.use(express.urlencoded({ extended: false }));
 
-// a session is often used in applications suchas login/signup
+// a session is often used in applications such as login/signup
 // app.use(
 //   session({
 //     secret: 'arbitary-string',
@@ -29,8 +31,6 @@ app.use('/public/images', express.static(__dirname + '/public/uploads'))
 //     cookie: { secure: true }
 //   })
 // );
-// process incoming data such as body payload - data received from client
-app.use(express.urlencoded({ extended: false }));
 
 // Simple request time logger
 // app.use((req, res, next) => {
@@ -73,7 +73,7 @@ app.get("/about", (req, res) => {
 app.get("/signup", (req, res) => {
   res.sendFile(__dirname + "/pages/signup/forms.html");
 });
-// for every post route we must first GET 
+// for every post route we must first GET
 app.post("/signup", (req, res) => {
   console.log(req.body);
   res.redirect("/about");
@@ -83,15 +83,15 @@ app.post("/signup", (req, res) => {
 app.get("/register", (req, res) => {
   res.render("registration");
 });
-// for every post route we must first GET 
+// for every post route we must first GET
 app.post("/register", (req, res) => {
   console.log(req.body);
   res.redirect("/about");
 });
 
 //Simple request time logger for a specific route
-app.use('/about', (req, res, next) => {
-  console.log('A new request received at ' + Date.now());
+app.use("/about", (req, res, next) => {
+  console.log("A new request received at " + Date.now());
   next();
 });
 
