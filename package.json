@@ -7,11 +7,19 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alindaByamukama/nodejs-w-irene.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alindaByamukama/nodejs-w-irene/issues"
+  },
+  "homepage": "https://github.com/alindaByamukama/nodejs-w-irene#readme",
   "keywords": [
     "learning",
     "nodejs"
   ],
-  "author": "alindab",
+  "author": "alindaByamukama",
   "license": "ISC",
   "dependencies": {
     "connect-ensure-login": "^0.1.1",
