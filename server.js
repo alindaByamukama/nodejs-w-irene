@@ -2,6 +2,16 @@
 
 const express = require("express");
 const path = require("path");
+const mongoose = require("mongoose");
+const config = require("./config/db");
+const passport = require("passport");
+
+//express sesssion
+const expressSession = require("express-session")({
+  secret: "secretStuff",
+  resave: false,
+  saveUninitialized: false,
+});
 
 // IMPORTING ROUTE FILES
 const registrationRoutes = require("./routes/regRoutes");
@@ -9,6 +19,21 @@ const registrationRoutes = require("./routes/regRoutes");
 // INSTANTIATIONS
 
 const app = express();
+
+// DATABASE CONNECTION
+
+mongoose.connect(config.database, { useNewUrlParser: true });
+const db = mongoose.connection;
+
+// Check connection
+db.once("open", () => {
+  console.log("Connected to MongoDB");
+});
+
+// Check for db errors
+db.on("error", (err) => {
+  console.error(err);
+});
 
 // CONFIGURATIONS
 
@@ -18,12 +43,18 @@ app.set("views", path.join(__dirname, "views"));
 
 // MIDDLEWARE
 
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/public/images", express.static(__dirname + "/public/uploads"));
-app.use(express.urlencoded({ extended: false }));
+app.use(expressSession);
+
+// PASSPORT CONFIG MIDDLEWARE
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 // ROUTES
-// this is custom middleware designed by ourselves
+
 app.use("/user", registrationRoutes);
 
 app.get("*", (req, res) => {
