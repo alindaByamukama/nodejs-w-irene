@@ -1,5 +1,5 @@
-const { text } = require("express");
 const mongoose = require("mongoose");
+const passportLocalMongoose = require("passport-local-mongoose");
 
 const userSchema = new mongoose.Schema({
   firstname: {
@@ -18,7 +18,6 @@ const userSchema = new mongoose.Schema({
   },
   dob: {
     type: Date,
-    required: true,
   },
   email: {
     type: String,
@@ -34,7 +33,6 @@ const userSchema = new mongoose.Schema({
   },
   gender: {
     type: String,
-    required: true,
   },
   role: {
     type: String,
@@ -42,7 +40,6 @@ const userSchema = new mongoose.Schema({
   },
   nin: {
     type: String,
-    required: true,
   },
   regDate: {
     type: String,
@@ -50,6 +47,16 @@ const userSchema = new mongoose.Schema({
   },
   mStatus: {
     type: String,
+  },
+  password: {
+    type: String,
     required: true,
   },
 });
+
+// specifiy what we use to login
+userSchema.plugin(passportLocalMongoose, {
+  usernameField: 'userId',
+});
+// collection is called RegisterUser in mongodb
+module.exports = mongoose.model("RegisterUser", userSchema);

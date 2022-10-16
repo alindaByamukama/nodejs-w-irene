@@ -1,19 +1,19 @@
 // DEPENDENCIES
-
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
 const config = require("./config/db");
 const passport = require("passport");
-
-//express sesssion
 const expressSession = require("express-session")({
   secret: "secretStuff",
   resave: false,
   saveUninitialized: false,
 });
+// import user model
+const RegisterUser = require("./models/User");
 
 // IMPORTING ROUTE FILES
+
 const registrationRoutes = require("./routes/regRoutes");
 
 // INSTANTIATIONS
@@ -52,10 +52,16 @@ app.use(expressSession);
 
 app.use(passport.initialize());
 app.use(passport.session());
+// this authenticates
+passport.use(RegisterUser.createStrategy());
+// gives a serial number that allows you to track users in your system after login
+passport.serializeUser(RegisterUser.serializeUser());
+// when user logsout the  serial num is destroyed
+passport.deserializeUser(RegisterUser.deserializeUser());
 
 // ROUTES
 
-app.use("/user", registrationRoutes);
+app.use("/", registrationRoutes);
 
 app.get("*", (req, res) => {
   res.send("404! This is an invalid URL.");
