@@ -69,11 +69,10 @@
   - npm install passport-local
   - npm install passport-local-mongoose
   - npm install moment
-- [ ] Assignment: Read about the MVC (model views controller) structure
-  - [MVC Architecture - GeeksforGeeks](https://www.geeksforgeeks.org/model-view-controllermvc-architecture-for-node-applications/)
-- [ ] Assignment: Add more Pug files to your project
-  - [ ] Push your files to GitHub
-  - [ ] Share the link to the repo
+- [x] Assignment: Read about the MVC (model views controller) structure
+- [x] Assignment: Add more Pug files to your project
+  - [x] Push your files to GitHub
+  - [x] Share the link to the repo
 
 ### Day 8
 
@@ -86,3 +85,32 @@
   - const registrationRoutes = require("./routes/regRoutes");
 - Middleware that allows us to acces the routes in the router file in the browser
   - app.use("/user", registrationRoutes);
+
+### Day 9
+
+- Database Creation
+  - Schema / Document / Collection
+  - [Databases]()
+- Import mongoose into the server -> this helps us to connect to mongodb without constantly opening it
+- Create a config dir and a db.js file
+  - then import the db file into the server
+- setup db connections in server
+- import passport into server and add middleware
+  - passport will help with us authentication
+  - and tracking authentication in our system
+- import express-session and its middleware intot the server
+- Models (MVC)
+  - Create a user registration schema in your models file
+  - a schema sets the design of your regstration in the db
+  - see [What is a schema?](https://www.tutorialspoint.com/dbms/dbms_data_schemas.htm)
+  - see [What is a collection?](hhttps://www.mongodb.com/docs/manual/core/databases-and-collections/)
+  - see [What is a db/ collection/ document?](https://www.geeksforgeeks.org/mongodb-database-collection-and-document/)
+
+### Day 10
+- Learning about JS Async/Await, Callbacks, Promises by making ice cream -->
+  - [JS Async-Await...](https://www.freecodecamp.org/news/javascript-async-await-tutorial-learn-callbacks-promises-async-await-by-making-icecream/)
+- 
+
+#### Resources
+
+- [mongodb cheatsheet](https://www.mongodb.com/developer/products/mongodb/cheat-sheet/)

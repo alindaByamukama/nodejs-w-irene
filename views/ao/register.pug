@@ -1,46 +1,76 @@
-extends layout 
-block content   
-    header.card-header  
-    //- script(src='js/validation')
-    h.4card-title Register Agricultural Officer 
-    form(action='/register' id='regForm' name='register' method='POST')
-        div.form-row 
-            div.col.form-group 
-                label Full Name 
-                    input.form-control#fname(name='fullname')
-            div.col.form-group 
-                label Email 
-                    input.form-control#email(name='email')
-            div.col.form-group 
-                label Unique Number  
-                    input.form-control#uniquenumber(name='uniquenumber')
-            div.form.row 
-                div.col.form-group 
-                    label.form-check.form-check-inline 
-                        input.form-check.form-check-input#female(type="radio" name='female' value='female') 
-                        span.form-check-label Female 
-                    label.form-check.form-check-inline 
-                        input.form-check-input#male(type="radio" name='male' value='male') 
-                        span.form-check-label Male 
-                div.col.form-group 
-                    label.form-check.form-check-inline 
-                        input.form-check-input#password(type="password" name='password' value='password') 
-                        span.form-check-label Password 
-                div.col.form-group 
-                    label Role 
-                        select.form-control(name='role')
-                            option(value='(Select a Role)') (Select a Role)
-                            option(value='AgriOficer') AgricOfficer 
-        Register 
-            div.form-row 
-                    div.col.form-group 
-                        button.btn.btn-primary.btn-block#submit(value='Submit') Submit
-            div.form-row 
-                div.col.form-group 
-                    a(class='button', href='/login') Login
-    block Footer    
-        div.col-md-12 &copy; 2022 Refactory Cohort 12, NodeJS by Irene.
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title AORegistrationForm | UFARM
+    link(rel='stylesheet', href='/css/style.css')
+  body
+    .form-container
+      form#registrationForm(name='registrationForm', action='/register', method='POST')
+        h1 Agricultural Officer Registration Form
+        hr
+        br
+        fieldset.fieldset
+          legend Personal Details
+          .fields
+            label(for='firstname') First Name:
+            input#firstname.input-field(autocomplete='off', type='text', name='firstname', placeholder='Enter first name')
 
+          .fields
+            label(for='lastname') Second Name:
+            input#lastname.input-field(autocomplete='off', type='text', name='lastname', placeholder='Enter second name')
 
+          .fields             
+            label(for='gender') Gender:
+            input#gender.input-field(autocomplete='off', type='text', placeholder='Enter your gender', name='gender')
 
-                
+          .fields
+            label(for='mStatus') Marital Status:
+            input#mStatus.input-field(autocomplete='off', type='text', placeholder='Enter your marital status', name='mStatus')
+
+          .fields
+            label(for='dob') D.O.B:
+            input#dob.input-field(autocomplete='off', type='text', placeholder='dd/mm/yyyy', name='dob')
+
+          .fields
+            label(for='nin') NIN:
+            input#nin.input-field(autocomplete='off', type='text', placeholder='Enter your national identity number', name='nin')
+        br
+        fieldset.fieldset
+          legend Contact Details
+          .fields
+            label(for='telephone') Mobile Number
+            |  
+            input#telephone.input-field(autocomplete='off', type='numbers', placeholder='+256771234567', name='telephone')
+          
+          .fields
+            label(for='email') Email
+            input#email.input-field(type='text', placeholder='Enter Email', name='email')
+          
+          .fields             
+            label(for='address') Address:
+            input#address.input-field(autocomplete='off', type='text', placeholder='Enter your Address', name='address')
+        |
+        br
+        fieldset.fieldset
+          legend Profile Details
+          .fields
+            label.bold(for='role') Role:
+            input#role.input-field(autocomplete='off', type='text', placeholder='Enter your role', name='role')
+          .fields
+            label.bold(for='userId') User ID:
+            input#userId.input-field(autocomplete='off', type='text', placeholder='AO-MASAJJA-0001', name='userId')
+          .fields
+            label.bold(for='regDate') Registration Date:
+            input#regDate.input-field(autocomplete='off', type='text', placeholder='dd/mm/yyyy', name='regDate')
+          .fields
+            label.bold(for='password') Password:
+            input#password.input-field(autocomplete='off', type='password', placeholder='Enter your password', name='password')
+          .fields
+            label.bold(for='confirmPassword') Confirm Password:
+            input#confirmPassword.input-field(autocomplete='off', type='password', placeholder='Confirm your password', name='confirmPassword')
+        .row
+          input.button(name='submit', type='submit', value='Submit Form')
+    script(src='/js/script.js')
