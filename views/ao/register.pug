@@ -27,7 +27,7 @@ html(lang='en')
             input#gender.input-field(autocomplete='off', type='text', placeholder='Enter your gender', name='gender')
 
           .fields
-            label(for='maritalStatus') Marital Status:
+            label(for='mStatus') Marital Status:
             input#mStatus.input-field(autocomplete='off', type='text', placeholder='Enter your marital status', name='mStatus')
 
           .fields
@@ -60,11 +60,17 @@ html(lang='en')
             label.bold(for='role') Role:
             input#role.input-field(autocomplete='off', type='text', placeholder='Enter your role', name='role')
           .fields
-            label.bold(for='UserId') Unique ID:
-            input#UserId.input-field(autocomplete='off', type='text', placeholder='AO-MASAJJA-0001', name='UserId')
+            label.bold(for='userId') User ID:
+            input#userId.input-field(autocomplete='off', type='text', placeholder='AO-MASAJJA-0001', name='userId')
           .fields
             label.bold(for='regDate') Registration Date:
             input#regDate.input-field(autocomplete='off', type='text', placeholder='dd/mm/yyyy', name='regDate')
+          .fields
+            label.bold(for='password') Password:
+            input#password.input-field(autocomplete='off', type='password', placeholder='Enter your password', name='password')
+          .fields
+            label.bold(for='confirmPassword') Confirm Password:
+            input#confirmPassword.input-field(autocomplete='off', type='password', placeholder='Confirm your password', name='confirmPassword')
         .row
-          input.button(name='submit', type='submit', value='Submit Form', onclick='validateForm()')
+          input.button(name='submit', type='submit', value='Submit Form')
     script(src='/js/script.js')

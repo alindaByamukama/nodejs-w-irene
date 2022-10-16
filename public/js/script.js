@@ -8,7 +8,7 @@ const telephone = document.getElementById("telephone");
 const gender = document.getElementById("gender");
 const email = document.getElementById("email");
 const regDate = document.getElementById("regDate");
-const UserId = document.getElementById("UserId");
+const userId = document.getElementById("userId");
 const nin = document.getElementById("nin");
 const dateOfBirth = document.getElementById("dob");
 const address = document.getElementById("address");
@@ -16,11 +16,6 @@ const address = document.getElementById("address");
 const min = 4;
 const max = 27;
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-});
-
-// validate form
 // REGULAR EXPRESSIONS
 let alphabet = /^[A-Za-z]+$/;
 let mobileRegex = /^([\+]){1}([0-9]){12}$/;
@@ -76,17 +71,17 @@ const validateTelephone = () => {
   }
 };
 
-// USERID
+// uSERID
 const validateUserId = () => {
-  if (UserId.value === "") {
-    UserId.style.border = "2px solid red";
-    UserId.style.background = "#f4c2c7";
-  } else if (UserId.value.match(idRegex)) {
-    UserId.style.border = "2px solid green";
-    UserId.style.background = "#8ef4a6";
+  if (userId.value === "") {
+    userId.style.border = "2px solid red";
+    userId.style.background = "#f4c2c7";
+  } else if (userId.value.match(idRegex)) {
+    userId.style.border = "2px solid green";
+    userId.style.background = "#8ef4a6";
   } else {
-    UserId.style.border = "2px solid red";
-    UserId.style.background = "#f4c2c7";
+    userId.style.border = "2px solid red";
+    userId.style.background = "#f4c2c7";
   }
 };
 
