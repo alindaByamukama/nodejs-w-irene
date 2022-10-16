@@ -49,6 +49,7 @@
   - Pug converters -->
     - [HTML to Pug](https://html-to-pug.com/)
     - [Pug HTML](https://pughtml.com/)
+    - [Code beautify -> html-to-pug-converter](https://codebeautify.org/html-to-pug-converter)
 
 ### Day Seven
 
@@ -109,8 +110,6 @@
 - Learning about JS Async/Await, Callbacks, Promises by making ice cream -->
   - [JS Async-Await...](https://www.freecodecamp.org/news/javascript-async-await-tutorial-learn-callbacks-promises-async-await-by-making-icecream/)
 - 
-
-
 
 #### Resources
 
