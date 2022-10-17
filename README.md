@@ -106,11 +106,18 @@
   - see [What is a db/ collection/ document?](https://www.geeksforgeeks.org/mongodb-database-collection-and-document/)
 
 ### Day 10
+
 - Learning about JS Async/Await, Callbacks, Promises by making ice cream -->
   - [JS Async-Await...](https://www.freecodecamp.org/news/javascript-async-await-tutorial-learn-callbacks-promises-async-await-by-making-icecream/)
-- 
+- [ ] Assignment (see google classroom)
 
+### Day 11
 
+- check for users with existing user id, to stop duplicates
+- how to add routes for another file
+- how to get the list of registered users (specifically farmer one)
+- [ ] create a schema for produce upload with provision for owner of the produce
+-
 
 #### Resources
 
