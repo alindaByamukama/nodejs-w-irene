@@ -49,6 +49,7 @@
   - Pug converters -->
     - [HTML to Pug](https://html-to-pug.com/)
     - [Pug HTML](https://pughtml.com/)
+    - [Code beautify -> html-to-pug-converter](https://codebeautify.org/html-to-pug-converter)
 
 ### Day Seven
 
