@@ -15,6 +15,9 @@ const RegisterUser = require("./models/User");
 // IMPORTING ROUTE FILES
 
 const registrationRoutes = require("./routes/regRoutes");
+const uploadRoutes = require("./routes/produceUploads");
+const authRoutes = require("./routes/authRoutes");
+const homeRoutes = require('./routes/homeRoutes')
 
 // INSTANTIATIONS
 
@@ -62,6 +65,9 @@ passport.deserializeUser(RegisterUser.deserializeUser());
 // ROUTES
 
 app.use("/", registrationRoutes);
+app.use("/", uploadRoutes);
+app.use("/", authRoutes);
+app.use("/", homeRoutes)
 
 app.get("*", (req, res) => {
   res.send("404! This is an invalid URL.");
