@@ -1,0 +1,28 @@
+extends layout 
+block content
+      form#registrationForm(name='registrationForm', action='/login', method='POST')
+        h1 Login Form
+        hr
+        br
+        fieldset.fieldset
+          legend Login  
+
+          .fields
+            label.bold(for='userId') User ID:
+            input#userId.input-field(autocomplete='off', type='text', placeholder='AO-MASAJJA-0001', name='userId')                
+
+          //- .fields
+          //-   label.bold(for='role') Role:
+          //-   //- input#role.input-field(autocomplete='off', type='text', placeholder='Enter your role', name='role')
+          //-   select.input-field(name="role", id="role")
+          //-     option(value="selectRole") Select Role
+          //-     option(value="agriculturalOfficer") Agricultural Officer
+          //-     option(value="farmerOne") Farmer One
+          //-     option(value="urbanFarmer") Urban Farmer         
+          
+          .fields
+            label.bold(for='password') Password:
+            input#password.input-field(autocomplete='off', type='password', placeholder='Enter your password', name='password')
+          
+        .row
+          button.button(name='submit', type='submit') Login
