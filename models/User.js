@@ -33,7 +33,6 @@ const userSchema = new mongoose.Schema({
   },
   parish: {
     type: String,
-    required: true,
   },
   gender: {
     type: String,
@@ -52,10 +51,10 @@ const userSchema = new mongoose.Schema({
   mStatus: {
     type: String,
   },
-  password: {
-    type: String,
-    required: true,
-  },
+  // password: {
+  //   type: String,
+  //   required: true,
+  // },
 });
 
 // specifiy what we use to login
