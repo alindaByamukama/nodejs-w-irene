@@ -117,8 +117,42 @@
 - check for users with existing user id, to stop duplicates
 - how to add routes for another file
 - how to get the list of registered users (specifically farmer one)
-- [ ] create a schema for produce upload with provision for owner of the produce
--
+- [x] create a schema for produce upload with provision for owner of the produce
+
+### Day 12
+- create a produce upload route
+  - handles image uploads with multer
+  - uses aycn await in routes 
+  - the commented route was checking for registered FOs and the rendering the upload page
+  - the post route was saving the file path of a single uploaded image and redirecting back to the dashboard 
+- [ ] Assignment (see google classroom)
+
+### Day 13
+- Created authentication routes for our login/logout
+  - Used CONNECT-ENSURE-LOGIN on the get route for produce uploads - cannot upload w/o being logged in
+  - connect-ensure-login tracks users login sessions
+  - Addes a logout button on the landing page that destroys a users login session and redirects back to the login page
+  - The logout btn is a mini form that can be added to any page where you want a user to be able to logout
+- [status: {
+        type: String,
+        default: 'pending',
+        enum: ['pedning', 'approved'],
+    }]
+  - find out what this does
+- [xxx: {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'RegisterUser',
+        required: true]
+  - find out what this does
+- [ ] Assignment --> create dashboards for the respective users AO, FO, UF (see more on the Google Classroom)
+
+### Day 14
+### Day 15
+### Day 16
+### Day 17
+### Day 18
+### Day 19
+### Day 20 FINAL DAY
 
 #### Resources
 
