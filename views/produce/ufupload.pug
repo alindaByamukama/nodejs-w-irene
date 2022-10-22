@@ -1,0 +1,54 @@
+extends layout
+block content
+    form(action='/ufupload', enctype="multipart/form-data",  method='POST')
+        h1 Produce Upload Form
+            label(for='producename') Produce Name
+            input#producename.input-field(autocomplete='off', type='text', name='producename')
+
+            label(for='produceprice') Produce Price
+            input#produceprice.input-field(autocomplete='off', type='text', name='produceprice')
+
+            label(for='producequantity') Produce Quantity
+            input#producequantity.input-field(autocomplete='off', type='text', name='producequantity')
+            
+            label(for='producetype') Produce Category
+            select#producetype.input-field(name="producetype") 
+              option(value="selectProduce") Select Produce Type
+              option(value="poultry") Poultry 
+              option(value="dairy") Dairy
+              option(value="horticulture") Horticulture
+
+            label(for='deliverymode') Mode of Delivery
+            select#deliverymode.input-field(name="deliverymode") 
+              option(value="selectProduce") Select Delivery Mode 
+              option(value="pickUp") Pick Up  
+              option(value="homeOrOffice") Home or Office
+
+            label(for='paymentmode') Mode of Payment
+            select#paymentmode.input-field(name="paymentmode") 
+              option(value="selectProduce") Select Payment Mode 
+              option(value="cashOnDelivery") Cash On Delivery 
+              option(value="mobileMoney") Mobile Money
+                        
+            label(for='photo') Produce Image:
+            input#produceimg.input-field(type='file', name='produceimg')
+
+            label(for='ufname') Urban Farmer Name
+            input#ufname.input-field(autocomplete='off', type='text', name='ufname')
+
+            label.bold(for='ufid') Urban Farmer ID:
+            select#ufid.input-field(name="ufid") 
+              if currentUser 
+                option(value=currentUser._id) #{urbanFarmer.userId}
+   
+            label(for='division') Division:
+            select#division.input-field(name="division") 
+              if currentUser 
+                option(value=currentUser._id) #{urbanFarmer.division}
+            
+            //- input#ufid.input-field(autocomplete='off', type='text', placeholder='AO-MASAJJA-0001', name='ufid')
+
+            label.bold(for='uploadDate') Upload Date:
+            input#uploadDate.input-field(autocomplete='off', type='text', placeholder='dd/mm/yyyy', name='uploadDate')
+
+            button.button(name='submit', type='submit', value='Upload Produce') Upload Produce
